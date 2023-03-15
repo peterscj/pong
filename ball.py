@@ -12,10 +12,9 @@ class Ball(Turtle):
     def __init__(self):
         super().__init__()
         self.make_ball()
-        self.pox_x = POS_X
-        self.pos_y = POS_Y
-        self.neg_x = NEG_X
-        self.neg_y = NEG_Y
+        self.x = POS_X
+        self.y = POS_Y
+        self.direction = RIGHT
 
     def make_ball(self):
         self.shape("circle")
@@ -30,14 +29,16 @@ class Ball(Turtle):
         self.x = POS_X
     def moving_left_hit_bottom(self):
         self.y = POS_Y
-        self.x = NEG_X
+        # self.x = NEG_X
     def moving_left_hit_top(self):
         self.y = NEG_Y
         self.x = NEG_X
     def move_left(self):
         self.setheading(LEFT)
+        self.direction = LEFT
     def move_right(self):
         self.setheading(RIGHT)
+        self.direction = RIGHT
     def move_ball(self):
         new_x = self.xcor()+self.x
         new_y = self.ycor()+self.y
