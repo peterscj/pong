@@ -14,11 +14,7 @@ screen.tracer(0)
 player_1 = Paddle()
 player_2 = Paddle()
 ball = Ball()
-p1_score = Scoreboard()
-p2_score = Scoreboard()
-
-p1_score.p1_score()
-p1_score.p2_score()
+scoreboard = Scoreboard()
 
 player_1.p1_start()
 player_2.p2_start()
@@ -47,11 +43,13 @@ while game_is_on:
     # Detect if ball passes paddle
     if ball.xcor() > 350:
         ball.starting_position()
-        p1_score.update_score()
+        scoreboard.update_p1_score()
 
     # Detect if ball passses paddle
     if ball.xcor() < -350:
         ball.starting_position()
-        p2_score.update_score()
+        scoreboard.update_p2_score()
+
+
 
 screen.exitonclick()
