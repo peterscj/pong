@@ -35,7 +35,23 @@ while game_is_on:
     time.sleep(0.1)
     screen.update()
     ball.move_ball()
-    if ball.ycor() > 270:
-        ball.direction()
+
+    # Detect collision on top wall
+    if abs(ball.ycor()) > 270:
+        ball.bounce_y()
+
+    # Detect collision with paddles
+    if ball.distance(player_1) < 30 or ball.distance(player_2) < 30:
+        ball.bounce_x()
+
+    # Detect if ball passes paddle
+    if ball.xcor() > 350:
+        ball.starting_position()
+        p1_score.update_score()
+
+    # Detect if ball passses paddle
+    if ball.xcor() < -350:
+        ball.starting_position()
+        p2_score.update_score()
 
 screen.exitonclick()

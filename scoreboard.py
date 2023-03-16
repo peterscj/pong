@@ -9,11 +9,11 @@ class Scoreboard(Turtle):
 
     def __init__(self):
         super().__init__()
+        self.score = 0
 
     def make_scoreboard(self):
         self.color("white")
         self.hideturtle()
-        self.score = 0
         self.penup()
 
     def p1_score(self):
@@ -34,7 +34,7 @@ class Scoreboard(Turtle):
         """
         Add 1 to score and clear text in scoreboard title
         """
-        self.score +=1
+        self.score += 1
         self.clear()
         self.increase_score()
 
