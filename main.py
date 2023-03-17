@@ -50,6 +50,4 @@ while game_is_on:
         ball.starting_position()
         scoreboard.update_p2_score()
 
-
-
 screen.exitonclick()
