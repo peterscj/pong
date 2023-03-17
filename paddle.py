@@ -7,6 +7,10 @@ P2_X = -350
 Y = 0
 
 class Paddle(Turtle):
+    """
+    Creates paddles for the players and gives them the
+    ability to move with the keys.
+    """
 
     def __init__(self):
         super().__init__()

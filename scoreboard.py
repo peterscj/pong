@@ -6,6 +6,11 @@ Y_COR = 240
 P1_X = 80
 P2_X = -80
 class Scoreboard(Turtle):
+    """
+    Scoreboard to keep track of each player's score.
+    Class handles entire scope of creating and updating the
+    scoreboard.
+    """
 
     def __init__(self):
         super().__init__()
